@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="MobDucks">
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Favorites!</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script src="MobDucks.js"></script>
+    <script src="favoritesFactory.js"></script>
+    <script src="directives/addFavoriteDirective.js"></script>
+    <script src="directives/favoriteItemDirective.js"></script>
+    <script src="directives/favoritesListDirective.js"></script>
+</head>
+
+<body ng-controller="MainController as mainCtrl">
+<h1>My Amazing Favorites</h1>
+
+<!-- directive that displays the list templates/favoritesListTemplate.html -->
+<div mob-favorites-list></div>
+
+<!-- The add form directive, controllers are assigned in directive, just insert the tags -->
+<div mob-add-favorite></div>
+
+<!-- hardcoded favorite item directive -->
+<div mob-favorite-item category="pragma" type="hardcoded"></div>
+
+<!-- display the json blob -->
+{{mainCtrl.favorites | json}}
+</body>
+</html>
